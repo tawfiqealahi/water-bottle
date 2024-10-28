@@ -1,0 +1,5 @@
+.bottleParent{
+    display: grid;
+    grid-template-columns: repeat(3, 1ft);
+    gap: 2rem;
+}

@@ -1,0 +1,12 @@
+.bottle{
+    border: .3rem solid rgb(234, 233, 233);
+    margin-top: .5rem;
+    border-radius: .8rem;
+    -webkit-border-radius: .8rem;
+    -moz-border-radius: .8rem;
+    -ms-border-radius: .8rem;
+    -o-border-radius: .8rem;
+}
+.bottle img{
+    width: 6rem;
+}
