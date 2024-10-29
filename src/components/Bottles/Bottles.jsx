@@ -13,7 +13,7 @@ const Bottles = () => {
     },[])
     return (
         <div>
-            <h3>Total bottles: {bottles.length}</h3>
+            <h3 style={{textAlign:'center', marginTop:'1rem'} }>Total bottles: {bottles.length}</h3>
            <div className='bottleParent'>
            {
                 bottles.map(bottle=> <Bottle bottle={bottle} key={bottles.id} ></Bottle>)
