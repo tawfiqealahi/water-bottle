@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
 import Bottle from "../Bottle/Bottle";
 import './Bottles.css';
-import { addToLS, getStoreCart } from "../../utilities/localStorage";
+import { addToLS, getStoreCart, removeFromLocalStorage } from "../../utilities/localStorage";
+import propTypes from 'prop-types';
 import Cart from "./Cart/Cart";
 
 
@@ -38,10 +39,18 @@ const Bottles = () => {
         addToLS(bottle.id);
     }
 
+    const handleRemoveProduct=id=>{
+
+        const remainingCart = purchase.filter(bottle=>bottle.id !==id)
+        setPurchase(remainingCart);
+
+        removeFromLocalStorage(id)
+    }
+
     return (
         <div>
             <h3 style={{textAlign:'center', marginTop:'1rem'} }>Total bottles: {bottles.length}</h3>
-            <Cart cart={purchase} ></Cart>
+            <Cart cart={purchase} handleRemoveProduct={handleRemoveProduct}  ></Cart>
             
            <div className='bottleParent'>
            { 
@@ -51,5 +60,11 @@ const Bottles = () => {
         </div>
     );
 };
+
+Bottle.propTypes={bottle: propTypes.object.isRequired,
+    
+        handlePurchase: propTypes.func.isRequired,
+    
+}
 
 export default Bottles;
