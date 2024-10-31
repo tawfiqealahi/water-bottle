@@ -1,0 +1,8 @@
+.bottleList{
+    display: grid;
+    grid-template-columns: repeat(10,1fr);
+    gap:.5rem;
+}
+.bottleList img{
+    width: 5rem;
+}

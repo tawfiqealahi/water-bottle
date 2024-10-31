@@ -1,10 +1,10 @@
  const getStoreCart =()=>{
-    const storeCartString=localStorage.getItem('cart');
-    if(storeCartString){
+    const storedCartString=localStorage.getItem('cart');
+    if(storedCartString){
         return JSON.parse(storedCartString)
-    } else{
+    } 
         return [];
-    }
+    
  }
 
 const saveCartToLS= cart=>{
@@ -19,4 +19,4 @@ const saveCartToLS= cart=>{
     saveCartToLS(cart);
  }
 
- export {addToLS}
+ export {addToLS,getStoreCart}
